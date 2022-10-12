@@ -21,12 +21,12 @@ public class CarDaoImp implements CarDao {
 
     @Override
     public void addCar(Car car) {
-        sessionFactory.getCurrentSession().save(car);
+        sessionFactory.getCurrentSession().persist(car);
     }
 
     @Override
     public List<Car> listCars() {
-        TypedQuery<Car> query=sessionFactory.getCurrentSession().createQuery("from Car");
+        TypedQuery<Car> query = sessionFactory.getCurrentSession().createQuery("from Car");
         return query.getResultList();
     }
 }
